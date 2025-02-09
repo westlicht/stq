@@ -50,16 +50,20 @@ void task_wait(Task* task);
 #include <thread>
 #include <vector>
 
-#ifndef STQ_ENABLE_TRACE
-#define STQ_ENABLE_TRACE 0
-#endif
-
 #ifndef STQ_ENABLE_ASSERT
 #define STQ_ENABLE_ASSERT 1
 #endif
 
+#ifndef STQ_ENABLE_TRACE
+#define STQ_ENABLE_TRACE 0
+#endif
+
 #if STQ_ENABLE_ASSERT
 #include <cassert>
+#endif
+
+#if STQ_ENABLE_TRACE
+#include <cstdio>
 #endif
 
 #if defined(__clang__)
