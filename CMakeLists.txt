@@ -17,3 +17,6 @@ target_compile_options(tests PRIVATE -Wall -Wextra -pedantic -Werror)
 # target_link_options(tests PUBLIC -fsanitize=address)
 target_compile_options(tests PRIVATE -fsanitize=thread)
 target_link_options(tests PRIVATE -fsanitize=thread)
+
+enable_testing()
+add_test(NAME tests COMMAND tests)
