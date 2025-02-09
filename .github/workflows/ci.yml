@@ -15,7 +15,7 @@ jobs:
       fail-fast: false
 
       matrix:
-        os: [windows-latest, ubuntu-latest, ubuntu-24.04-arm]
+        os: [windows-latest, ubuntu-latest, ubuntu-24.04-arm, macos-latest]
         build_type: [Debug, Release]
         compiler: [gcc, clang, cl]
         exclude:
@@ -27,6 +27,10 @@ jobs:
             compiler: cl
           - os: ubuntu-24.04-arm
             compiler: cl
+          - os: macos-latest
+            compiler: cl
+          - os: macos-latest
+            compiler: gcc
 
     steps:
     - uses: actions/checkout@v4
