@@ -54,11 +54,11 @@ jobs:
     steps:
     - uses: actions/checkout@v4
 
-    - uses: lukka/get-cmake@latest
+    # - uses: lukka/get-cmake@latest
 
     - name: Configure CMake
       run: >
-        cmake -B build -G Ninja
+        cmake -B build
         -DCMAKE_C_COMPILER=${{ matrix.c_compiler }}
         -DCMAKE_CXX_COMPILER=${{ matrix.cxx_compiler }}
         -DCMAKE_BUILD_TYPE=${{ matrix.build_type }}
